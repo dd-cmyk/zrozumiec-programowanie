@@ -173,6 +173,9 @@ class VMInstance(object):
     #                        codecs.encode(argument_bytes, "hex")))
     self.pc.v += 1 + length
     handler(self, argument_bytes)
+    # debug print
+   # print(self.mem._mem[0xA000:0xA019])
+   # print(' '.join('{:02x}'.format(x) for x in self.mem._mem[0xF000: 0xF009]))
 
 
   def run(self):
@@ -194,4 +197,10 @@ if __name__ == '__main__':
 
   vm = VMInstance()
   vm.load_memory_from_file(0, sys.argv[1])
+  #print(vm.mem._mem[0:50]) we could load program from file, but for now we refuse to do that
+  #if len(sys.argv) > 2:
+  #    with open(sys.argv[1], "rb") as f:
+  #        new_addr = len(f.read(64 * 1024)) - 1
+  #    vm.load_memory_from_file(new_addr, sys.argv[2]) # I can make this a loop
+  #print(vm.mem._mem[0:50])
   vm.run()

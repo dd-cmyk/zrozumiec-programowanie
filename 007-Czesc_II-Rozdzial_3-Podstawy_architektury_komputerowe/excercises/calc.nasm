@@ -1,5 +1,5 @@
 %include "vm.inc"
-  ; 1. Make a loop which will input a number to r6 and r7
+  ; 1. Make a loop which will input a number to r6 and r7.
   ; 2. Use an instruction for adding two registers
   ; 3. Call a subroutine to print a number
   ; This program supports up to eight digits (2^32 has 10 digits so in order to avoid an overflow we must limit it, it could be 9 easily, but my input_number implentation is weird).

@@ -41,7 +41,7 @@ class VMMemory(object):
     return self._mem[addr:addr + size]
 
   def store_many(self, addr, array):
-    if addr + len(array) - 1 >= len(self._mem):
+    if addr + len(array) - 1 >= len(self._mem): # why the -1 here?
       return False
     for i, value in enumerate(array):
       self._mem[addr + i] = value
